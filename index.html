@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stardew Helper</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="bar">
+    <span class="brand">🌱 Stardew Helper</span>
+    <nav class="tabs" id="tabs">
+      <button data-view="items" class="on">Items</button>
+      <button data-view="bundles">Bundles</button>
+      <button data-view="npcs">Relationships</button>
+      <button data-view="perfection">Perfection</button>
+      <button data-view="planting">Planting</button>
+    </nav>
+    <span class="spacer"></span>
+    <div class="farm">
+      <span class="small">Farm</span>
+      <select id="farmSelect" title="Each farm keeps its own progress"></select>
+      <button class="hbtn" id="newFarm" title="New farm profile">+</button>
+      <button class="hbtn" id="deleteFarm" title="Delete the selected farm profile">🗑</button>
+    </div>
+    <button class="hbtn primary" id="loadSave" title="Import progress from a Stardew save file">Load Save</button>
+    <button class="hbtn" id="exportBtn">Export</button>
+    <button class="hbtn" id="importBtn">Import</button>
+    <button class="hbtn" id="themeBtn" title="Toggle light/dark">◐</button>
+  </div>
+</header>
+<main id="main"></main>
+
+<input type="file" id="saveFile" hidden>
+<input type="file" id="jsonFile" accept=".json,application/json" hidden>
+
+<dialog id="customDlg">
+  <form method="dialog" class="form" id="customForm">
+    <h3>Add custom item</h3>
+    <label>Name <input name="name" required></label>
+    <label>Type <select name="type"></select></label>
+    <label>Mod / source tag <input name="src" placeholder="e.g. Sunberry, East Scarp"></label>
+    <label class="check" style="display:flex"><input type="checkbox" name="q" checked> Has quality (normal → iridium)</label>
+    <label>Icon URL <input name="url" placeholder="https://... (optional)"></label>
+    <label>…or icon file <input type="file" name="file" accept="image/*"></label>
+    <div class="actions">
+      <button class="btn" value="cancel" formnovalidate>Cancel</button>
+      <button class="btn primary" value="ok">Add</button>
+    </div>
+  </form>
+</dialog>
+
+<div id="toast"></div>
+
+<script src="data/items.js"></script>
+<script src="data/objects.js"></script>
+<script src="data/npcs.js"></script>
+<script src="data/bundles.js"></script>
+<script src="data/perfection.js"></script>
+<script src="data/crops.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

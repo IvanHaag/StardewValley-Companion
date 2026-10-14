@@ -1,0 +1,19 @@
+# Exported progress backups and any other JSON
+*.json
+
+# Build-script download cache
+tools/.cache/
+
+# Stardew Valley save files (if copied in for testing)
+SaveGameInfo
+Farm_*/
+*_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]
+*.sav
+
+# Python / OS / editor junk
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
